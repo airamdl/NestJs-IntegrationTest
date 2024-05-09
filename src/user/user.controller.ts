@@ -17,17 +17,17 @@ export class UserController {
   findAll() {
     return this.userService.findAll();
   }
-  @Get(':username')
-  async getUserByUsername(@Param('username') username: string) {
-    try {
-      return await this.userService.findOne(username);
-    } catch (error) {
-      if (error instanceof NotFoundException) {
-        throw new NotFoundException(error.message);
-      }
-      throw error; 
-    }
-  }
+  // @Get(':username')
+  // async getUserByUsername(@Param('username') username: string) {
+  //   try {
+  //     return await this.userService.findOne(username);
+  //   } catch (error) {
+  //     if (error instanceof NotFoundException) {
+  //       throw new NotFoundException(error.message);
+  //     }
+  //     throw error; 
+  //   }
+  // }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
